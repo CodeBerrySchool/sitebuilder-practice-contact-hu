@@ -1,0 +1,323 @@
+/**
+ * ÁTTEKINTÉS
+ *
+ * Ez a fájl írja le az oldalt felépítő komponenseket. Onnantól, hogy
+ * milyen a belső elrendezésük, egészen odáig, hogy milyen a szövegük
+ * színe, stb.
+ *
+ * Eddig is láthattad, de itt aztán nagyon erősen érvényesül a BEM
+ * (Block - Element - Modifier) gondolkodás a kódban. Ha ez ismeretlen
+ * számodra, javasoljuk, hogy olvasd el ezt a részt Harry Roberts
+ * CSS guideline-jában: https://cssguidelin.es/#bem-like-naming.
+ */
+
+
+/**
+ * TARTALOMJEGYZÉK
+ *
+ * 1. GOMBOK
+ *
+ * 2. FEJLÉC
+ *
+ * 3. NAVIGÁCIÓ
+ *
+ * 4. KAPCSOLATI ADATOK
+ *
+ * 5. KAPCSOLATFELVÉTELI FORM
+ *
+ * 6. LÁBLÉC
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #GOMBOK
+\*------------------------------------*/
+
+/**
+ * 1. Eltávolítjuk a bordert, hogy később ne zavarjon be a padding számításainkba.
+ * Plusz egy teli gombon amúgy is felesleges a border. :)
+ *
+ */
+
+.button {
+  display:        inline-block;
+  border:         2px solid;
+  border-radius:  1.786rem;
+  text-align:     center;
+}
+
+  .button--primary-solid {
+    border:           0; /* [1] */
+    background-color: #6200ea;
+    color:            #ffffff;
+  }
+
+  .button--primary-solid:visited { color: #ffffff; }
+
+
+
+
+
+/*------------------------------------*\
+  #FEJLÉC
+\*------------------------------------*/
+
+.header {
+  height:           80px;
+  background-color: #6200ea;
+}
+
+  .logo {
+    float:  left;
+    margin: 1.017rem 0;
+  }
+
+
+
+
+
+/*------------------------------------*\
+  #NAVIGÁCIÓ
+\*------------------------------------*/
+
+/**
+ * 1. Ez a padding ahhoz kell, hogy a hover effektus fehér sávja a megfelelő
+ * helyen jelenjen meg.
+ *
+ * 2. Adunk a linknek egy saját, alapállapotban átlátszó alsó bordert. Ezt
+ * fogjuk később felhasználni arra, hogy a szürke sáv megjelenjen hoverre. Azért
+ * adunk átlátszó bordert alapértelmezetten, hogy csak ennek színe változzon,
+ * és ne ugráljon a felület, ahogy azt tenné, ha hoverre adnánk hozzá az egész
+ * bordert.
+ *
+ * 3. Ezzel a szabállyal vesszük le az első linkről a felesleges bal oldali
+ * margint.
+ */
+
+.navigation { height: 80px; }
+
+  .navigation__link-container {
+    float:        right;
+    padding-top:  2.321rem;
+  }
+
+    .navigation__link {
+      vertical-align: middle;
+      padding-bottom: 2rem; /* [1] */
+      border-bottom:  4px solid; /* [2] */
+      border-color:   transparent; /* [2] */
+      margin-left:    4.571rem;
+      color:          #f4f3f5;
+      opacity:        0.65;
+      font-size:      .857rem;
+      font-weight:    bold;
+      text-transform: uppercase;
+      letter-spacing: .171rem;
+    }
+
+    a.navigation__link:first-child { margin-left: 0; } /* [3] */
+
+    .navigation__link:visited { color: #f4f3f5; }
+
+    .navigation__link:hover {
+      border-color:   #ffffff;
+      color:          #ffffff;
+      opacity:        1;
+    }
+
+
+
+
+
+/*------------------------------------*\
+  #KAPCSOLATI ADATOK
+\*------------------------------------*/
+
+/**
+ * 1. Az anchor elemek alapértelmezetten inline elemek. Ha egymás alatt akarjuk
+ * megjeleníteni őket, és kontrollálni akarjuk a margin, padding, stb.
+ * értékeiket, akkor át kell állítanunk őket block vagy inline-block elemmé.
+ *
+ * 2. Felül kell írnunk az alapértelmezett heading bottom margint.
+ *
+ * 3. Ez a szabályszett hozza létre a social media ikonok kör alakú hátterét.
+ *
+ * 4. Ha egy elemnek tökéletes kör alakú border kell, fontos, hogy a
+ * magassága és szélessége egyenlő legyen. Különben maximum kerekded formát
+ * tudunk csak elérni. A minden oldalon egyenlő padding szintén fontos.
+ *
+ * 5. Az 50%-os border radius hozza létre a tökéletes kör alakú bordert,
+ * ha fennáll az egyenlő szélessség és magasság.
+ *
+ * 6. Ez a szabályszett kontrollálja a FontAwesome ikonokat. Eltávolít róluk
+ * minden alapértelmezett extra szélességet és magasságot, és pontosan
+ * beállítja a méretüket.
+ */
+
+.contact-info {
+  padding:          4.286rem;
+  border-radius:    1.071rem;
+  background-color: #ffffff;
+}
+
+  .contact-info__map {
+    width:         100%;
+    height:        280px;
+    border-radius: 1.071rem;
+  }
+
+  .contact-info__map,
+  .contact-info__address,
+  .contact-info__phone-email {
+    margin-bottom: 2.143rem;
+  }
+
+  .contact-info__social-media { margin-bottom: .357rem; }
+
+    .contact-info__heading,
+    .contact-info__link {
+      color: #6200ea;
+    }
+
+    .contact-info__link {
+      display:        block; /* [1] */
+      margin-bottom:  .714rem;
+      font-size:      .857rem;
+      font-weight:    bold;
+      text-transform: uppercase;
+      letter-spacing: .171rem;
+    }
+
+    .contact-info__heading {
+      margin-bottom:  .7143rem; /* [2] */
+      font-size:      .857rem;
+      font-weight:    bold;
+      text-transform: uppercase;
+      letter-spacing: .171rem;
+    }
+
+    .contact-info__social-media-link { /* [3] */
+      display:          inline-block; /* [1] */
+      width:            2.857rem; /* [4] */
+      height:           2.857rem; /* [4] */
+      padding:          .714rem; /* [4] */
+      border-radius:    50%; /* [5] */
+      margin-right:     .714rem;
+      background-color: #6200ea;
+      text-align:       center;
+    }
+
+      .contact-info__social-media-icon { /* [6] */
+        color:          #ffffff;
+        font-size:      1.4285rem;
+      }
+
+
+
+
+
+/*------------------------------------*\
+#KAPCSOLATFELVÉTELI FORM
+\*------------------------------------*/
+
+/**
+ * 1. Az inputok alapértelmezetten inline elemek. Mielőtt elkezdhetnénk
+ * manipulálni a margin, padding, stb. értékeiket, block vagy inline-block
+ * elemmé kell őket alakítanunk.
+ *
+ * 2. Először lenullázzuk az input saját inherens borderét.
+ *
+ * 3. Adunk az inputnak egy saját, alapállapotban átlátszó alsó bordert. Ezt
+ * fogjuk később felhasználni arra, hogy a lila sáv megjelenjen focusra. Azért
+ * adunk átlátszó bordert alapértelmezetten, hogy csak ennek színe változzon,
+ * és ne ugráljon a felület, ahogy azt tenné, ha focusra adnánk hozzá az egész
+ * bordert.
+ *
+ * 4. Ez a szabályszett formázza a placheolder szövegeket.
+ *
+ * 5. A textarea elemeknek lehet magasságot és szélességet adni. Itt az
+ * előbbit használjuk ki.
+ *
+ * 6. Ez a szabályszett formázza a submit gombot, úgy, hogy kiegészíti a
+ * .button és .button--primary-solid szabályokat.
+ */
+
+.contact-form {
+  padding:          4.286rem;
+  border-radius:    1.071rem;
+  background-color: #ffffff;
+}
+
+  .contact-form__header { margin-bottom: 1.429rem; }
+
+    .contact-form__title { margin-bottom: .7143rem}
+
+    .contact-form__cta {
+      font-size:   1.429rem;
+      line-height: 30px;
+    }
+
+  .contact-form__input-field {
+    display:          block; /* [1] */
+    width:            100%;
+    padding:          1.1428rem 0 .9286rem 1.7143rem;
+    border:           0; /* [2] */
+    border-bottom:    3px solid; /* [3] */
+    border-color:     transparent; /* [3] */
+    margin-bottom:    1.071rem;
+    background-color: #f4f3f5;
+    outline:          none;
+  }
+
+    .contact-form__input-field:focus { border-bottom-color: #6200ea; }
+
+    .contact-form__input-field::placeholder { /* [4] */
+      font-weight: bold;
+      opacity:     .25;
+    }
+
+  .contact-form__input-field--textarea {
+    height:        150px; /* [5] */
+    margin-bottom: 1.4286rem;
+  }
+
+  .contact-form__submit { /* [6] */
+    width:          100%;
+    padding:        1.286rem 0;
+    margin-bottom:  0;
+    font-size:      .857rem;
+    font-weight:    bold;
+    text-transform: uppercase;
+    letter-spacing: .171rem;
+  }
+
+
+
+
+
+/*------------------------------------*\
+  #LÁBLÉC
+\*------------------------------------*/
+
+.footer {
+  height:           7.143rem;
+  padding:          3.071rem 0 3rem 0;
+  background-color: #211138;
+  text-align:       center;
+}
+
+  .footer__copyright {
+    color:          #b2acba;
+    font-size:      .857rem;
+    font-weight:    bold;
+    text-transform: uppercase;
+    letter-spacing: .171rem;
+  }
+
+  .footer__brand-name,
+  .footer__student-name {
+    color: #6200ea;
+  }

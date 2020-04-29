@@ -1,0 +1,96 @@
+/**
+ * ÁTTEKINTÉS
+ *
+ * Ez a fájl kezeli az oldal elrendezését (layoutját). Ahelyett, hogy egyenként,
+ * a komponensekhez kötjük az elhelyezésüket, készítünk egy külön rendszert,
+ * amelynek semmi más dolga nincs, mint megmondani egyes elemeknek, hogy
+ * mekkorák legyenek, és hol jelenjenek meg.
+ *
+ * Az itt deklarált classokat aztán ráhívhatjuk bármilyen containerre,
+ * hogy az a megfelelő méretet öltse, és a megfelelő módon viselkedjen.
+ */
+
+
+/**
+ * TARTALOMJEGYZÉK
+ *
+ * ELRENDEZÉS
+ * Elemek.................Magukra a containerekre vonatkozó méretszabályok.
+ * Módosítók..............Az elrendezést módosító szabályok, pl. floatok.
+ *
+ * TÉRKÖZÖK
+ * Vízszintes térközök....Containerek közötti vízszintes whitespace szabályai.
+ *
+ * HELPEREK
+ * Clearfix...............Floatolt containerekre hívható class.
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #ELRENDEZÉS
+\*------------------------------------*/
+
+/**
+ * 1. Amikor két container között függőleges üres térre (gutterre) van szükség,
+ * ezeket a classokat használjuk. Automatikusan akkorára méretezik magukat,
+ * hogy kihagyják a két elem közti whitespace felét. Így amikor a két elem
+ * egymás mellé kerül, kettejük között automatikusan megjelenik a megfelelő
+ * mértékű térköz. A teljes hatáshoz az egyik elemet balra, a másikat jobbra
+ * kell floatolnunk a megfelelő class-okkal.
+ *
+ * 2. Ha egy elemet vízszintesen középre kell rendezned, használd ezt a class-t.
+ *
+ * 3. Ha elemeket floatolnod kell, ezek a class-ok a barátaid. Ne feledd a
+ * containerre meghívni a .clearfix class-t a HELPEREK szekcióból.
+ */
+
+.layout__item--full-width               { width: 100%; }
+
+.layout__item--70-percent               { width: 70%; }
+
+.layout__item--50-percent               { width: 50%; }
+
+.layout__item--50-percent-w-gutter      { width: calc(50% - 1.071rem); } /* [1] */
+
+
+.layout__item--content-w-sticked-footer { min-height: calc(100vh - 80px); }
+
+
+.layout__item--centered-horizontally { /* [2] */
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+
+.layout__item--floated-left  { float: left; } /* [3] */
+
+.layout__item--floated-right { float: right; }/* [3] */
+
+
+
+
+
+/*------------------------------------*\
+  #TÉRKÖZÖK
+\*------------------------------------*/
+
+.gutter--horizontal-small { margin-bottom: 2.142rem; }
+
+.gutter--horizontal-big   { margin-bottom: 2.857rem; }
+
+
+
+
+
+/*------------------------------------*\
+  #HELPEREK
+\*------------------------------------*/
+
+.clearfix:after {
+  content:  "";
+  display:  table;
+  clear:    both;
+}

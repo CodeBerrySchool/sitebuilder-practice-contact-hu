@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Small Business Contact Page</title>
+  <meta name="description" content="Contact page for a small company.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <script src="https://kit.fontawesome.com/c300050d94.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="layout">
+
+
+  <header class="header layout__item--full-width gutter--horizontal-big">
+    <div class="layout__item--70-percent layout__item--centered-horizontally clearfix">
+      <div class="layout__item--50-percent layout__item--floated-left">
+        <a href="index.html">
+          <img src="assets/logo_50.svg" alt="site logo" class="logo">
+        </a>
+      </div>
+
+
+      <div class="navigation layout__item--50-percent layout__item--floated-left">
+        <nav class="navigation__link-container">
+          <a href="#" class="navigation__link">Home</a>
+          <a href="#" class="navigation__link">About</a>
+          <a href="#" class="navigation__link">Pricing</a>
+          <a href="#" class="navigation__link">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="layout__item--content-w-sticked-footer layout__item--70-percent layout__item--centered-horizontally
+              gutter--horizontal-big clearfix">
+
+
+    <div class="contact-info layout__item--50-percent-w-gutter layout__item--floated-left">
+
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.4556889126807!2d-118.341063884784!3d34.08346498059731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b8d36cb40581%3A0xe92d0cfe124170cf!2s3481%20Melrose%20Ave%2C%20Los%20Angeles%2C%20CA%2090038%2C%20Egyes%C3%BClt%20%C3%81llamok!5e0!3m2!1shu!2shu!4v1586337676963!5m2!1shu!2shu"
+          width="600"
+          height="450"
+          frameborder="0"
+          style="border:0;"
+          allowfullscreen aria-hidden="false"
+          tabindex="0"
+          class="contact-info__map">
+      </iframe>
+
+
+      <div class="contact-info__address">
+        <h6 class="contact-info__heading">Address</h6>
+        <p>3481 Melrose Avenue, <br> Beverly Hills, CA 90210, USA</p>
+      </div>
+
+      <div class="contact-info__phone-email">
+        <a href="tel:+1234567890" class="contact-info__link">(123) 456-7890</a>
+        <a href="mailto:name@example.com" class="contact-info__link">name@example.com</a>
+      </div>
+
+      <div class="contact-info__social-media">
+        <a class="contact-info__social-media-link"><i class="contact-info__social-media-icon fab fa-facebook-f"></i></a>
+        <a class="contact-info__social-media-link"><i class="contact-info__social-media-icon fab fa-instagram"></i></a>
+        <a class="contact-info__social-media-link"><i class="contact-info__social-media-icon fab fa-twitter"></i></a>
+      </div>
+
+    </div><!-- /.contact-info -->
+
+
+    <div class="contact-form layout__item--50-percent-w-gutter layout__item--floated-right">
+
+      <div class="contact-form__header">
+        <h2 class="contact-form__title">Contact Us</h2>
+        <p class="contact-form__cta">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.</p>
+      </div>
+
+      <form class="contact-form__input-fields">
+        <input type="text" id="name" name="name" placeholder="Name" class="contact-form__input-field">
+        <input type="text" id="email" name="email" placeholder="Enter Email" class="contact-form__input-field">
+        <textarea id="message" name="message" placeholder="Enter your Message..." class="contact-form__input-field contact-form__input-field--textarea"></textarea>
+        <input type="submit" value="Submit" class="button button--primary-solid contact-form__submit">
+      </form>
+
+    </div><!-- /.contact-form -->
+
+
+  </div><!-- /.layout__item--70-percent -->
+
+
+  <footer class="footer layout__item--full-width">
+    <p class="footer__copyright">
+      © 2020 Copyright
+      <span class="footer__brand-name">Brand Name</span> / Design by
+      <span class="footer__student-name">Student Name</span>
+    </p>
+  </footer>
+
+
+</div><!-- /.layout -->
+
+</body>
+</html>
