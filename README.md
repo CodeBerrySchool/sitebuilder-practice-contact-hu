@@ -8,5 +8,5 @@ A kész oldalt itt tudod megnézni élőben:
 
 https://codeberryschool.github.io/sitebuilder-practice-contact-hu/
 
-![Contact Showcase](assets/sitebuilder-practice-showcase-blog.png?raw=true "Contact Showcase")
+![Contact Showcase](assets/sitebuilder-practice-showcase-contact.png?raw=true "Contact Showcase")
 
